@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/mystyle.css">
+
+</head>
+
+<body class="valign-wrapper blue-grey lighten-5">
+
+    <div class="row center-align m-0" id="main" style="width: 100%;">
+
+        <div class="col s12 m6 l6">
+            <div class="grey darken-4 z-depth-5" style="height: 650px;">
+                <div class="left-align grey lighten-1 valign-wrapper m-0 z-depth-4" style="width: 100%; padding: 5px;">
+                    <span class="dot red lighten-2"></span>
+                    <span class="dot orange lighten-2"></span>
+                    <span class="dot green"></span>
+                    <small>HTML TEMPLATE</small>
+                </div>
+                <div class="m-0 p-0 valign-wrapper w-100 red"></div>
+                <textarea name="htmlSyntax" id="" class="materialize-textarea white-text" style="border: none; white-space: nowrap; max-height: 625px; min-height: 625px; overflow-y: auto; overflow-x: auto; resize: none; max-width: 100%; min-width: 100%;">{{htmlCode}}</textarea>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l6">
+            <div class="grey lighten-3 z-depth-5 w-100" style="height: 650px; overflow-y: auto; overflow-x: hidden;">
+
+                <div class="left-align grey lighten-1 valign-wrapper m-0 z-depth-4 w-100" style="padding: 5px;">
+                    <span class="dot red lighten-2"></span>
+                    <span class="dot orange lighten-2"></span>
+                    <span class="dot green"></span>
+                    <small>OPTIONS AND SETTINGS</small>
+                </div>
+
+                <div class="grey lighten-3" style="padding: 10px;">
+                    <div class="z-depth-2" style="padding: 5px;">
+                        <div class="w-100 grey lighten-2 z-depth-1 center-align" style="height: 25px;">Meta Tags</div>
+                        <div class="input-field w-100 m-0 p-1">
+                            <input id="docTitle" type="text" v-model="title" class="validate">
+                            <label class="inputLabel" for="docTitle">Document Title</label>
+                        </div>
+                        <div class="input-field -w-100 m-0 p-1">
+                            <input id="docDesc" type="text" v-model="desc" class="validate">
+                            <label class="inputLabel" for="docDesc">Document Description</label>
+                        </div>
+                        <div class="input-field w-100 m-0 p-1">
+                            <input id="docKeywords" type="text" v-model="keywords" class="validate">
+                            <label class="inputLabel" for="docKeywords">Document Keywords</label>
+                        </div>
+                        <div class="input-field w-100 m-0 p-1">
+                            <input id="docAuthor" type="text" v-model="author" class="validate">
+                            <label class="inputLabel" for="docAuthor">Document Author</label>
+                        </div>
+                        <div class="input-field w-100 m-0 p-1">
+                            <p>
+                                <label>
+                                  <input type="checkbox" class="filled-in" v-model="viewport" />
+                                  <span>Enable Viewport Meta Tag</span>
+                                </label>
+                            </p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script type="text/javascript " src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js "></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js "></script>
+    <!-- development version, of jquery -->
+    <script type="text/javascript " src="https://code.jquery.com/jquery-3.5.1.js "></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
