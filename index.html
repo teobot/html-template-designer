@@ -16,7 +16,7 @@
 
     <div class="row center-align m-0" id="main" style="width: 100%;">
 
-        <div class="col s12 m12 l6">
+        <div class="col s12 m12 l6" style="margin: 15px 0px 15px 0px;">
             <div class="grey darken-4 z-depth-5" style="height: 700px;">
                 <div class="left-align grey lighten-1 valign-wrapper m-0 z-depth-4" style="width: 100%; padding: 5px;">
                     <span class="dot red lighten-2"></span>
@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        <div class="col s12 m12 l6">
+        <div class="col s12 m12 l6" style="margin: 15px 0px 15px 0px;">
             <div class="grey lighten-3 z-depth-5 w-100" style="height: 700px; overflow-y: auto; overflow-x: hidden;">
 
                 <div class="left-align grey lighten-1 valign-wrapper m-0 z-depth-4 w-100" style="padding: 5px;">
@@ -47,7 +47,7 @@
                             <input id="docTitle" type="text" v-model="title" class="validate">
                             <label class="inputLabel" for="docTitle">Document Title</label>
                         </div>
-                        <div class="input-field -w-100 m-0 p-1">
+                        <div class="input-field w-100 m-0 p-1">
                             <input id="docDesc" type="text" v-model="desc" class="validate">
                             <label class="inputLabel" for="docDesc">Document Description</label>
                         </div>
@@ -72,6 +72,24 @@
                                   <span>Enable Charset Meta Tag</span>
                                 </label>
                             </div>
+                            <div class="col s12 m12 l6">
+                                <label>
+                                  <input type="checkbox" class="filled-in" v-model="HTML5doctype" />
+                                  <span>HTML5 doctype</span>
+                                </label>
+                            </div>
+                            <div class="col s12 m12 l6">
+                                <label>
+                                  <input type="checkbox" class="filled-in" v-model="comments" />
+                                  <span>Comments on added Files</span>
+                                </label>
+                            </div>
+                            <div class="row p-1 m-0">
+                                <div class="input-field col s12">
+                                    <input id="langAttribute" type="text" v-model="langAttribute" class="validate">
+                                    <label class="inputLabel" for="langAttribute">HTML Lang Attribute</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -79,7 +97,29 @@
                 <!-- Option scripts and styling frameworks -->
                 <div class="grey lighten-3" style="padding: 10px;">
                     <div class="z-depth-2" style="padding: 5px;">
-                        <div class="w-100 grey lighten-2 z-depth-1 center-align" style="height: 25px;">Additional Scripts</div>
+                        <div class="w-100 grey lighten-2 z-depth-1 center-align" style="height: 25px;">Frameworks</div>
+
+                        <div class="input-field w-100 m-0 p-1 row left-align" style="margin-top: 5px;">
+
+                            <div class="input-field col s12">
+                                <select v-model="selectedStyling">
+                                  <option value="" selected>Choose Framework</option>
+                                  <option v-for="sf in styleFrameworks" :value="sf">{{sf.title}}</option>
+                                  <option value="">None</option>
+                                </select>
+                                <label>Styling Frameworks</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <select v-model="selectedJavascript" multiple>
+                                  <option value="" selected disabled>Choose Additional JS scripts</option>
+                                  <option v-for="ajs in jsScripts" :value="ajs">{{ajs.title}}</option>
+                                </select>
+                                <label>Additional Javascript Links</label>
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>
@@ -91,10 +131,10 @@
 
     <!-- development version, includes helpful console warnings -->
     <script type="text/javascript " src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js "></script>
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js "></script>
     <!-- development version, of jquery -->
     <script type="text/javascript " src="https://code.jquery.com/jquery-3.5.1.js "></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js "></script>
 
     <script src="js/main.js"></script>
 </body>
