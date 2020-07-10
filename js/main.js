@@ -79,16 +79,16 @@ var main = new Vue({
             // Body Area
             hr += "\t<body>\n";
             hr += " \n";
+            if (this.selectedJavascript) {
+                this.selectedJavascript.forEach(element => {
+                    hr += `\t\t${element.link}\n`;
+                });
+            }
             if (this.selectedStyling) {
                 if (this.comments) {
                     hr += `\t\t${this.selectedStyling.jsComment}\n`;
                 }
                 hr += `\t\t${this.selectedStyling.jsLink}\n`;
-            }
-            if (this.selectedJavascript) {
-                this.selectedJavascript.forEach(element => {
-                    hr += `\t\t${element.link}\n`;
-                });
             }
             hr += "\t</body>\n\n";
 
